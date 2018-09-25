@@ -11,14 +11,20 @@ public class oddsOrEvens {
 
         //greet user and ask to choose odd or even
         System.out.print("Hello " + user + ", which do you choose? (O)dds or (E)vens? ");
-        String choice = input.nextLine();
+        
+        String choice;
+        do {
+            choice = input.nextLine();
+            if (choice.equalsIgnoreCase("e")) {
+                System.out.println(user + " has picked evens. The computer will be odds!");
+            } else if(choice.equalsIgnoreCase("o")){
+                System.out.println(user + " has picked odds. The computer will be evens!");
+            } else {
+                System.out.println("That is not a valid option, Choose (O)odds or (E)vens.");
+            }
 
-        if (choice.equalsIgnoreCase("e")) {
-            System.out.println(user + " has picked evens. The computer will be odds!");
-        } else {
-            System.out.println(user + " has picked odds. The computer will be evens!");
+        } while((!choice.equalsIgnoreCase("e")) && (!choice.equalsIgnoreCase("o")));
 
-        }
         System.out.println("----------------------------------------------------------");
 
 
